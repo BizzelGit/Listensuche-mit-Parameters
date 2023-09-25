@@ -1,0 +1,33 @@
+#Bibliothek bei der eine Liste mit Ländern gefüllt ist - ein Buchstabe und eine Anzahl gegeben sind.
+#Liste hat mehrere Einträge Buchstabe und Anzahl jeweils nur eins
+
+from daten import liste, buchstabe, anzahl 
+
+def stadt_mit(para_liste, para_buchstabe, para_anzahl):
+
+    lang = para_liste
+    langzahl = len(lang)
+    ausgabe_liste = []
+    
+    for i in range(langzahl):
+        #Prüfung Anzahl
+        langwort = len(para_liste[i])
+        ergebnisliste_lang = langwort <= para_anzahl
+
+        #Prüfung erster Buchstabe
+        first_para_liste = para_liste[i]
+        first_para_liste_buchst = first_para_liste[0] 
+        ergebnisliste_buchst = first_para_liste_buchst == para_buchstabe
+
+        #Prüfung ob beide Prüfungen TRUE sind
+        if ergebnisliste_lang == True and ergebnisliste_buchst == True:
+            ergebnisliste = True
+            ausgabe_liste.append(liste[i])
+        else:
+            ergebnisliste = False
+    
+    return ausgabe_liste
+    
+    
+
+print(stadt_mit(liste, buchstabe,anzahl))  
