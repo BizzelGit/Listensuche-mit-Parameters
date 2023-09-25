@@ -1,0 +1,22 @@
+#Import mehrere Datenpunkte. Es findet eine Prüfung der Distanz statt. Wenn Schritte < 100 sind, so kann wird der Weg gegangen, ansonsten bleibt er bei 0,0
+#jede neue Runde Nullt den BasisStandort auf  0,0
+
+from daten import punkte_liste
+from turtle import *
+
+print(punkte_liste)
+
+def gehe_wenn_nah(punkt):
+    standort = pos()
+    entfernung = distance(punkt)
+    if entfernung < 100:
+        goto(punkt)
+    else:
+        goto(standort)
+    return pos()
+
+
+for i in punkte_liste:
+    print(gehe_wenn_nah(i))
+    goto(0,0)
+    
